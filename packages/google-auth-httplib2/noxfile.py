@@ -100,7 +100,7 @@ def lint(session):
     Returns a failure if the linters find linting errors or sufficiently
     serious code quality issues.
     """
-    session.install(FLAKE8_VERSION, BLACK_VERSION)
+    session.install(FLAKE8_VERSION, BLACK_VERSION, "setuptools")
     session.run(
         "black",
         "--check",
