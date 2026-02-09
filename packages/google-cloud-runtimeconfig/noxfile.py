@@ -369,7 +369,7 @@ def docfx(session):
     )
 
 
-@nox.session(python="3.14")
+@nox.session(python=DEFAULT_PYTHON_VERSION)
 @nox.parametrize(
     "protobuf_implementation",
     ["python", "upb", "cpp"],
@@ -377,7 +377,7 @@ def docfx(session):
 def prerelease_deps(session, protobuf_implementation):
     """Run all tests with prerelease versions of dependencies installed."""
 
-    if protobuf_implementation == "cpp" and session.python in ("3.11", "3.12", "3.13"):
+    if protobuf_implementation == "cpp" and session.python in ("3.11", "3.12", "3.13", "3.14"):
         session.skip("cpp implementation is not supported in python 3.11+")
 
     # Install all dependencies
