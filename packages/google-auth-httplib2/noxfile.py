@@ -457,3 +457,84 @@ def prerelease_deps(session):
             system_test_folder_path,
             *session.posargs,
         )
+
+
+@nox.session(python=DEFAULT_PYTHON_VERSION)
+def core_deps_from_source(session):
+    """Run all tests with core dependencies installed from source
+    rather than pulling the dependencies from PyPI.
+    """
+
+    # Install all dependencies
+    session.install("-e", ".[all, tests, tracing]")
+    unit_deps_all = UNIT_TEST_STANDARD_DEPENDENCIES + UNIT_TEST_EXTERNAL_DEPENDENCIES
+    session.install(*unit_deps_all)
+    system_deps_all = (
+        SYSTEM_TEST_STANDARD_DEPENDENCIES + SYSTEM_TEST_EXTERNAL_DEPENDENCIES
+    )
+    session.install(*system_deps_all)
+
+    # Because we test minimum dependency versions on the minimum Python
+    # version, the first version we test with in the unit tests sessions has a
+    # constraints file containing all dependencies and extras.
+    with open(
+        CURRENT_DIRECTORY
+        / "testing"
+        / f"constraints-{UNIT_TEST_PYTHON_VERSIONS[0]}.txt",
+        encoding="utf-8",
+    ) as constraints_file:
+        constraints_text = constraints_file.read()
+
+    # Ignore leading whitespace and comment lines.
+    constraints_deps = [
+        match.group(1)
+        for match in re.finditer(
+            r"^\s*(\S+)(?===\S+)", constraints_text, flags=re.MULTILINE
+        )
+    ]
+
+    session.install(*constraints_deps)
+
+    # Note: If a dependency is added to the `core_dependencies_from_source` list,
+    # the `prerel_deps` list in the `prerelease_deps` nox session should also be updated.
+    core_dependencies_from_source = [
+        "google-auth @ git+https://github.com/googleapis/google-auth-library-python.git",
+    ]
+
+    for dep in core_dependencies_from_source:
+        session.install("--pre", "--no-deps", "--upgrade", dep)
+
+    # Remaining dependencies
+    other_deps = [
+        "requests",
+    ]
+    session.install(*other_deps)
+
+    # Print out prerelease package versions
+    session.run("python", "-c", "import google.auth; print(google.auth.__version__)")
+
+    session.run(
+        "py.test",
+        "tests",
+    )
+
+    system_test_path = os.path.join("tests", "system.py")
+    system_test_folder_path = os.path.join("tests", "system")
+
+    # Only run system tests if found.
+    if os.path.exists(system_test_path):
+        session.run(
+            "py.test",
+            "--verbose",
+            f"--junitxml=system_{session.python}_sponge_log.xml",
+            system_test_path,
+            *session.posargs,
+        )
+    if os.path.exists(system_test_folder_path):
+        session.run(
+            "py.test",
+            "--verbose",
+            f"--junitxml=system_{session.python}_sponge_log.xml",
+            system_test_folder_path,
+            *session.posargs,
+        )
