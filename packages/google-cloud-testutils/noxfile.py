@@ -118,8 +118,9 @@ def unit(session):
 
 
 @nox.session(python=DEFAULT_PYTHON_VERSION)
-def check_lower_bounds(session):
-    """Check lower bounds in setup.py are reflected in constraints file"""
+def system(session):
+    """Run system test.
+    Check lower bounds in setup.py are reflected in constraints file"""
     session.install(".")
     session.run(
         "lower-bound-checker",
