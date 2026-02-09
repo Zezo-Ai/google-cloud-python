@@ -156,7 +156,7 @@ html_theme = "alabaster"
 html_theme_options = {
     "description": "Google Cloud Client Libraries for google-auth-httplib2",
     "github_user": "googleapis",
-    "github_repo": "google-auth-library-python-httplib2",
+    "github_repo": "google-cloud-python",
     "github_banner": True,
     "font_family": "'Roboto', Georgia, sans",
     "head_font_family": "'Roboto', Georgia, serif",
