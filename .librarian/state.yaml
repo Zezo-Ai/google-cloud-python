@@ -3691,3 +3691,12 @@ libraries:
       - README.rst
       - docs/summary_overview.md
     tag_format: '{id}-v{version}'
+  - id: google-auth-httplib2
+    version: 0.3.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-auth-httplib2/
+    preserve_regex: []
+    remove_regex: []
+    tag_format: '{id}-v{version}'
