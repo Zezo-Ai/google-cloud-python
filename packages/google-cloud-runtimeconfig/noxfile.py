@@ -90,6 +90,7 @@ def lint(session):
     )
     session.run("flake8", "google", "tests")
 
+
 @nox.session(python=UNIT_TEST_PYTHON_VERSIONS)
 def mypy(session):
     """Run the type checker."""
@@ -392,7 +393,12 @@ def docfx(session):
 def prerelease_deps(session, protobuf_implementation):
     """Run all tests with prerelease versions of dependencies installed."""
 
-    if protobuf_implementation == "cpp" and session.python in ("3.11", "3.12", "3.13", "3.14"):
+    if protobuf_implementation == "cpp" and session.python in (
+        "3.11",
+        "3.12",
+        "3.13",
+        "3.14",
+    ):
         session.skip("cpp implementation is not supported in python 3.11+")
 
     # Install all dependencies
@@ -492,6 +498,7 @@ def prerelease_deps(session, protobuf_implementation):
             },
         )
 
+
 @nox.session(python=DEFAULT_PYTHON_VERSION)
 @nox.parametrize(
     "protobuf_implementation",
@@ -501,7 +508,12 @@ def core_deps_from_source(session, protobuf_implementation):
     """Run all tests with core dependencies installed from source
     rather than pulling the dependencies from PyPI."""
 
-    if protobuf_implementation == "cpp" and session.python in ("3.11", "3.12", "3.13", "3.14"):
+    if protobuf_implementation == "cpp" and session.python in (
+        "3.11",
+        "3.12",
+        "3.13",
+        "3.14",
+    ):
         session.skip("cpp implementation is not supported in python 3.11+")
 
     # Install all dependencies
