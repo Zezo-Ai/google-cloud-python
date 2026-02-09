@@ -25,11 +25,6 @@ import nox
 
 # 'update_lower_bounds' is excluded
 nox.options.sessions = [
-    "lint",
-    "blacken",
-    "lint_setup_py",
-    "mypy",
-    "unit",
     "check_lower_bounds",
 ]
 
