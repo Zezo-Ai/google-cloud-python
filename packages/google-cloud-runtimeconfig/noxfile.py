@@ -90,6 +90,21 @@ def lint(session):
     )
     session.run("flake8", "google", "tests")
 
+@nox.session(python=UNIT_TEST_PYTHON_VERSIONS)
+def mypy(session):
+    """Run the type checker."""
+    session.install(
+        # TODO(https://github.com/googleapis/gapic-generator-python/issues/2410): Use the latest version of mypy
+        "mypy<1.16.0",
+        "types-requests",
+    )
+    session.install(".")
+    session.run(
+        "mypy",
+        "-p",
+        "google",
+    )
+
 
 @nox.session(python=DEFAULT_PYTHON_VERSION)
 def blacken(session):
