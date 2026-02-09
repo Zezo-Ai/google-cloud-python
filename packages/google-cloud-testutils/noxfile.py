@@ -117,7 +117,7 @@ def unit(session):
     )
 
 
-@nox.session(python=DEFAULT_PYTHON_VERSION)
+@nox.session(python=ALL_PYTHON)
 def system(session):
     """Run system test.
     Check lower bounds in setup.py are reflected in constraints file"""
