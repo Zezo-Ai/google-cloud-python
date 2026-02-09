@@ -2935,6 +2935,15 @@ libraries:
     remove_regex:
       - packages/google-cloud-telcoautomation/
     tag_format: '{id}-v{version}'
+  - id: google-cloud-testutils
+    version: 1.7.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-cloud-testutils
+    preserve_regex: []
+    remove_regex: []
+    tag_format: '{id}-v{version}'
   - id: google-cloud-texttospeech
     version: 2.34.0
     last_generated_commit: c288189b43c016dd3cf1ec73ce3cadee8b732f07
