@@ -46,7 +46,8 @@ for dir in `find 'packages' -type d -wholename 'packages/*/tests/system'`; do
   # Get the path to the package by removing the suffix /tests/system
   package=$(echo $dir | cut -f -2 -d '/')
 
-  if [[ $package = @(*google-cloud-bigquery-storage*) ]]; then
+  # Run system tests on every change to these libraries
+  if [[ $package = @(*google-cloud-bigquery-storage*|*google-cloud-testutils*) ]]; then
     files_to_check=${package}
   else
     files_to_check=${package}/CHANGELOG.md
