@@ -7,7 +7,7 @@
     "release_level": "preview",
     "language": "python",
     "library_type": "GAPIC_MANUAL",
-    "repo": "googleapis/python-runtimeconfig",
+    "repo": "googleapis/google-cloud-python",
     "distribution_name": "google-cloud-runtimeconfig",
     "api_id": "runtimeconfig.googleapis.com",
     "requires_billing": true,
