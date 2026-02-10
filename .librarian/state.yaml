@@ -2573,6 +2573,15 @@ libraries:
     remove_regex:
       - packages/google-cloud-run/
     tag_format: '{id}-v{version}'
+  - id: google-cloud-runtimeconfig
+    version: 0.36.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-cloud-runtimeconfig
+    preserve_regex: []
+    remove_regex: []
+    tag_format: '{id}-v{version}'
   - id: google-cloud-saasplatform-saasservicemgmt
     version: 0.3.0
     last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
