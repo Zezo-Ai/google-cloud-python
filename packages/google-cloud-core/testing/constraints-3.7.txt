@@ -12,3 +12,5 @@ grpcio==1.38.0
 cryptography==38.0.3
 # cachetools is a direct dependency of google-auth
 cachetools==2.0.0
+# required for Python 3.7 only
+importlib-metadata==1.1.0
