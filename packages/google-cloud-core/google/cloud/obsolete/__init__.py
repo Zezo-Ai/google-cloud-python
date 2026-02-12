@@ -14,7 +14,11 @@
 
 """Helpers for deprecated code and modules."""
 
-import importlib.metadata as metadata
+try:
+    import importlib.metadata as metadata
+except ImportError:
+    import importlib_metadata as metadata
+
 import warnings
 
 

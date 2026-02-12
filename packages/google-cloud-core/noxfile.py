@@ -258,6 +258,12 @@ def prerelease_deps(session, protobuf_implementation):
 
     session.install(*constraints_deps)
 
+    # Remaining dependencies
+    other_deps = [
+        "cachetools",
+    ]
+    session.install(*other_deps)
+
     prerel_deps = [
         "googleapis-common-protos",
         "google-api-core",
@@ -359,6 +365,12 @@ def core_deps_from_source(session, protobuf_implementation):
 
     for dep in core_dependencies_from_source:
         session.install("--pre", "--no-deps", "--upgrade", dep)
+
+    # Remaining dependencies
+    other_deps = [
+        "cachetools",
+    ]
+    session.install(*other_deps)
 
     session.run(
         "py.test",
