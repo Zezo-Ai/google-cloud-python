@@ -1154,7 +1154,7 @@ libraries:
     last_generated_commit: ""
     apis: []
     source_roots:
-      - packages/google-cloud-core/
+      - packages/google-cloud-core
     preserve_regex: []
     remove_regex: []
     tag_format: '{id}-v{version}'
