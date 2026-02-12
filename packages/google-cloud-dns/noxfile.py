@@ -139,6 +139,23 @@ def format(session):
 
 
 @nox.session(python=DEFAULT_PYTHON_VERSION)
+def mypy(session):
+    """Run the type checker."""
+    session.install(
+        # TODO(https://github.com/googleapis/gapic-generator-python/issues/2410): Use the latest version of mypy
+        "mypy<1.16.0",
+        "types-requests",
+        "types-protobuf",
+    )
+    session.install(".")
+    session.run(
+        "mypy",
+        "-p",
+        "google",
+    )
+
+
+@nox.session(python=DEFAULT_PYTHON_VERSION)
 def lint_setup_py(session):
     """Verify that setup.py is valid (including RST check)."""
     session.install("docutils", "pygments", "setuptools")
