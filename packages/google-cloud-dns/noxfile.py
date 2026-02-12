@@ -428,7 +428,7 @@ def prerelease_deps(session, protobuf_implementation):
     with open(
         CURRENT_DIRECTORY
         / "testing"
-        / f"constraints-{UNIT_TEST_PYTHON_VERSIONS[0]}.txt",
+        / f"constraints-{ALL_PYTHON[0]}.txt",
         encoding="utf-8",
     ) as constraints_file:
         constraints_text = constraints_file.read()
@@ -514,7 +514,7 @@ def core_deps_from_source(session, protobuf_implementation):
     with open(
         CURRENT_DIRECTORY
         / "testing"
-        / f"constraints-{UNIT_TEST_PYTHON_VERSIONS[0]}.txt",
+        / f"constraints-{ALL_PYTHON[0]}.txt",
         encoding="utf-8",
     ) as constraints_file:
         constraints_text = constraints_file.read()
