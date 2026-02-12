@@ -16,7 +16,7 @@ libraries:
     tag_format: '{id}-v{version}'
   - id: google-ads-datamanager
     version: 0.4.0
-    last_generated_commit: 7a5706618f42f482acf583febcc7b977b66c25b2
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/ads/datamanager/v1
         service_config: datamanager_v1.yaml
@@ -203,6 +203,15 @@ libraries:
       - docs/CHANGELOG.md
     remove_regex:
       - packages/google-area120-tables/
+    tag_format: '{id}-v{version}'
+  - id: google-auth-httplib2
+    version: 0.3.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-auth-httplib2
+    preserve_regex: []
+    remove_regex: []
     tag_format: '{id}-v{version}'
   - id: google-cloud-access-approval
     version: 1.18.0
@@ -419,8 +428,8 @@ libraries:
       - packages/google-cloud-apphub/
     tag_format: '{id}-v{version}'
   - id: google-cloud-artifact-registry
-    version: 1.19.0
-    last_generated_commit: 9a477cd3c26a704130e2a2fb44a40281d9312e4c
+    version: 1.20.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/devtools/artifactregistry/v1
         service_config: artifactregistry_v1.yaml
@@ -487,7 +496,7 @@ libraries:
     tag_format: '{id}-v{version}'
   - id: google-cloud-auditmanager
     version: 0.1.0
-    last_generated_commit: 85b3f459f91cd08669c27da47d07bb57f6d9aa4d
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/auditmanager/v1
         service_config: auditmanager_v1.yaml
@@ -794,7 +803,7 @@ libraries:
       - packages/google-cloud-bigquery-reservation/
     tag_format: '{id}-v{version}'
   - id: google-cloud-bigquery-storage
-    version: 2.36.0
+    version: 2.36.1
     last_generated_commit: 6b36371f6f3099624547e9ce4c1db304161e6afe
     apis:
       - path: google/cloud/bigquery/storage/v1beta2
@@ -1044,8 +1053,8 @@ libraries:
       - packages/google-cloud-compute-v1beta/
     tag_format: '{id}-v{version}'
   - id: google-cloud-confidentialcomputing
-    version: 0.7.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    version: 0.8.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/confidentialcomputing/v1
         service_config: confidentialcomputing_v1.yaml
@@ -1178,8 +1187,8 @@ libraries:
       - packages/google-cloud-data-qna/
     tag_format: '{id}-v{version}'
   - id: google-cloud-databasecenter
-    version: 0.4.0
-    last_generated_commit: 87e3579c041a50f985f8de71e9494c8fc85d520b
+    version: 0.5.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/databasecenter/v1beta
         service_config: databasecenter_v1beta.yaml
@@ -1237,8 +1246,8 @@ libraries:
       - packages/google-cloud-dataflow-client/
     tag_format: '{id}-v{version}'
   - id: google-cloud-dataform
-    version: 0.8.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    version: 0.9.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/dataform/v1beta1
         service_config: dataform_v1beta1.yaml
@@ -1372,8 +1381,8 @@ libraries:
       - packages/google-cloud-devicestreaming/
     tag_format: '{id}-v{version}'
   - id: google-cloud-dialogflow
-    version: 2.45.0
-    last_generated_commit: 9a477cd3c26a704130e2a2fb44a40281d9312e4c
+    version: 2.46.0
+    last_generated_commit: 7f62014053cd26b1acb7a1d0bf167104b64e3690
     apis:
       - path: google/cloud/dialogflow/v2beta1
         service_config: dialogflow_v2beta1.yaml
@@ -1404,8 +1413,8 @@ libraries:
       - packages/google-cloud-dialogflow-cx
     tag_format: '{id}-v{version}'
   - id: google-cloud-discoveryengine
-    version: 0.16.0
-    last_generated_commit: c288189b43c016dd3cf1ec73ce3cadee8b732f07
+    version: 0.17.0
+    last_generated_commit: f248ed087ef9b822834de74c962d9ba67bb737d3
     apis:
       - path: google/cloud/discoveryengine/v1
         service_config: discoveryengine_v1.yaml
@@ -1460,8 +1469,8 @@ libraries:
     remove_regex: []
     tag_format: '{id}-v{version}'
   - id: google-cloud-documentai
-    version: 3.9.0
-    last_generated_commit: cfe62b3c5ceb9f81879c61480f26707980534462
+    version: 3.10.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/documentai/v1beta3
         service_config: documentai_v1beta3.yaml
@@ -1680,8 +1689,8 @@ libraries:
       - packages/google-cloud-gke-connect-gateway/
     tag_format: '{id}-v{version}'
   - id: google-cloud-gke-hub
-    version: 1.20.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    version: 1.21.0
+    last_generated_commit: 7f62014053cd26b1acb7a1d0bf167104b64e3690
     apis:
       - path: google/cloud/gkehub/v1
         service_config: gkehub_v1.yaml
@@ -1694,8 +1703,10 @@ libraries:
       - docs/CHANGELOG.md
       - docs/gkehub_v1/configmanagement_v1
       - docs/gkehub_v1/multiclusteringress_v1
+      - docs/gkehub_v1/rbacrolebindingactuation_v1
       - google/cloud/gkehub_v1/configmanagement_v1
       - google/cloud/gkehub_v1/multiclusteringress_v1
+      - google/cloud/gkehub_v1/rbacrolebindingactuation_v1
     remove_regex:
       - packages/google-cloud-gke-hub
     tag_format: '{id}-v{version}'
@@ -2582,6 +2593,15 @@ libraries:
     remove_regex:
       - packages/google-cloud-run/
     tag_format: '{id}-v{version}'
+  - id: google-cloud-runtimeconfig
+    version: 0.36.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-cloud-runtimeconfig
+    preserve_regex: []
+    remove_regex: []
+    tag_format: '{id}-v{version}'
   - id: google-cloud-saasplatform-saasservicemgmt
     version: 0.3.0
     last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
@@ -2820,8 +2840,8 @@ libraries:
       - packages/google-cloud-speech/
     tag_format: '{id}-v{version}'
   - id: google-cloud-storage-control
-    version: 1.9.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    version: 1.10.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/storage/control/v2
         service_config: storage_v2.yaml
@@ -2877,7 +2897,7 @@ libraries:
     tag_format: '{id}-v{version}'
   - id: google-cloud-support
     version: 0.3.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/support/v2beta
         service_config: cloudsupport_v2beta.yaml
@@ -2943,6 +2963,15 @@ libraries:
       - snippets/README.md
     remove_regex:
       - packages/google-cloud-telcoautomation/
+    tag_format: '{id}-v{version}'
+  - id: google-cloud-testutils
+    version: 1.7.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-cloud-testutils
+    preserve_regex: []
+    remove_regex: []
     tag_format: '{id}-v{version}'
   - id: google-cloud-texttospeech
     version: 2.34.0
@@ -3122,8 +3151,8 @@ libraries:
       - packages/google-cloud-vision/
     tag_format: '{id}-v{version}'
   - id: google-cloud-visionai
-    version: 0.3.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    version: 0.4.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/cloud/visionai/v1alpha1
         service_config: visionai_v1alpha1.yaml
@@ -3377,8 +3406,8 @@ libraries:
       - packages/google-maps-routing
     tag_format: '{id}-v{version}'
   - id: google-maps-solar
-    version: 0.3.0
-    last_generated_commit: 3322511885371d2b2253f209ccc3aa60d4100cfd
+    version: 0.4.0
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/maps/solar/v1
         service_config: solar_v1.yaml
@@ -3643,7 +3672,7 @@ libraries:
     tag_format: '{id}-v{version}'
   - id: googleapis-common-protos
     version: 1.72.0
-    last_generated_commit: 7a5706618f42f482acf583febcc7b977b66c25b2
+    last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b
     apis:
       - path: google/api
         service_config: serviceconfig.yaml

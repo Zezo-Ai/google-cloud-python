@@ -75,7 +75,7 @@ RUN tar -xvf pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz -C pandoc-binary --stri
 # This needs to be a single command so that the git clone command is not cached
 RUN git clone https://github.com/googleapis/synthtool.git synthtool && \
     cd synthtool && \
-    git checkout 6702a344265de050bceaff45d62358bb0023ba7d
+    git checkout afd7725f32d522a95e964884e0fba6d0d6b4cb6a
 
 # --- Final Stage ---
 # This stage creates the lightweight final image, copying only the
