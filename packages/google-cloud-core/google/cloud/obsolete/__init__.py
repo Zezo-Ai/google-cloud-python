@@ -17,7 +17,8 @@
 try:
     import importlib.metadata as metadata
 except ImportError:
-    import importlib_metadata as metadata
+    # For Python 3.7 compatibility
+    import importlib_metadata as metadata  # type: ignore[no-redef]
 
 import warnings
 
