@@ -8,3 +8,7 @@
 google-api-core==1.31.6
 google-auth==1.25.0
 grpcio==1.38.0
+# cryptography is a direct dependency of google-auth
+cryptography==38.0.3
+# cachetools is a direct dependency of google-auth
+cachetools==2.0.0
