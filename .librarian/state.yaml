@@ -1468,6 +1468,15 @@ libraries:
     remove_regex:
       - packages/google-cloud-dms/
     tag_format: '{id}-v{version}'
+  - id: google-cloud-dns
+    version: 0.36.0
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/google-cloud-dns
+    preserve_regex: []
+    remove_regex: []
+    tag_format: '{id}-v{version}'
   - id: google-cloud-documentai
     version: 3.10.0
     last_generated_commit: 9eea40c74d97622bb0aa406dd313409a376cc73b

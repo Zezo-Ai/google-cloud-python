@@ -47,7 +47,7 @@ for dir in `find 'packages' -type d -wholename 'packages/*/tests/system'`; do
   package=$(echo $dir | cut -f -2 -d '/')
 
   # Run system tests on every change to these libraries
-  if [[ $package = @(*google-cloud-bigquery-storage*|*google-cloud-testutils*) ]]; then
+  if [[ $package = @(*google-cloud-bigquery-storage*|*google-cloud-dns*|*google-cloud-testutils*) ]]; then
     files_to_check=${package}
   else
     files_to_check=${package}/CHANGELOG.md
