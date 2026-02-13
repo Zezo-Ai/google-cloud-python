@@ -33,7 +33,8 @@ BLACK_PATHS = ["docs", "google", "tests", "noxfile.py", "setup.py"]
 # Black and flake8 clash on the syntax for ignoring flake8's F401 in this file.
 BLACK_EXCLUDES = ["--exclude", "^/google/api_core/operations_v1/__init__.py"]
 
-PYTHON_VERSIONS = ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+ALL_PYTHON = ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+SUPPORTED_PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 
 DEFAULT_PYTHON_VERSION = "3.14"
 CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
@@ -106,7 +107,49 @@ def install_prerelease_dependencies(session, constraints_path):
         session.install(*other_deps)
 
 
-def default(session, install_grpc=True, prerelease=False, install_async_rest=False):
+def install_core_deps_dependencies(session, constraints_path):
+    with open(constraints_path, encoding="utf-8") as constraints_file:
+        constraints_text = constraints_file.read()
+        # Ignore leading whitespace and comment lines.
+        constraints_deps = [
+            match.group(1)
+            for match in re.finditer(
+                r"^\s*(\S+)(?===\S+)", constraints_text, flags=re.MULTILINE
+            )
+        ]
+        if constraints_deps:
+            session.install(*constraints_deps)
+
+        # Note: If a dependency is added to the `core_dependencies_from_source` list,
+        # the `prerel_deps` list in the `install_prerelease_dependencies` method should also be updated.
+        core_dependencies_from_source = [
+            "googleapis-common-protos @ git+https://github.com/googleapis/google-cloud-python#egg=googleapis-common-protos&subdirectory=packages/googleapis-common-protos",
+            "google-auth @ git+https://github.com/googleapis/google-auth-library-python.git",
+            "grpc-google-iam-v1 @ git+https://github.com/googleapis/google-cloud-python#egg=grpc-google-iam-v1&subdirectory=packages/grpc-google-iam-v1",
+            "proto-plus @ git+https://github.com/googleapis/proto-plus-python.git",
+        ]
+
+        for dep in core_dependencies_from_source:
+            session.install(dep, "--no-deps", "--ignore-installed")
+            print(f"Installed {dep}")
+
+        # Remaining dependencies
+        other_deps = [
+            "requests",
+            "pyasn1",
+            "cryptography",
+            "cachetools",
+        ]
+        session.install(*other_deps)
+
+
+def default(
+    session,
+    install_grpc=True,
+    prerelease=False,
+    install_async_rest=False,
+    install_deps_from_source=False,
+):
     """Default unit test session.
 
     This is intended to be run **without** an interpreter set, so
@@ -139,7 +182,14 @@ def default(session, install_grpc=True, prerelease=False, install_async_rest=Fal
     if prerelease:
         install_prerelease_dependencies(
             session,
-            f"{constraints_dir}/constraints-{constraints_type}{PYTHON_VERSIONS[0]}.txt",
+            f"{constraints_dir}/constraints-{constraints_type}{SUPPORTED_PYTHON_VERSIONS[0]}.txt",
+        )
+        # This *must* be the last install command to get the package from source.
+        session.install("-e", lib_with_extras, "--no-deps")
+    elif install_deps_from_source:
+        install_core_deps_dependencies(
+            session,
+            f"{constraints_dir}/constraints-{constraints_type}{SUPPORTED_PYTHON_VERSIONS[0]}.txt",
         )
         # This *must* be the last install command to get the package from source.
         session.install("-e", lib_with_extras, "--no-deps")
@@ -206,7 +256,7 @@ def default(session, install_grpc=True, prerelease=False, install_async_rest=Fal
     session.run(*pytest_args)
 
 
-@nox.session(python=PYTHON_VERSIONS)
+@nox.session(python=ALL_PYTHON)
 @nox.parametrize(
     ["install_grpc", "install_async_rest", "python_versions", "legacy_proto"],
     [
@@ -267,7 +317,13 @@ def unit(
 
 @nox.session(python=DEFAULT_PYTHON_VERSION)
 def prerelease_deps(session):
-    """Run the unit test suite."""
+    """Run the test suite installing pre-release versions of dependencies."""
+    default(session, prerelease=True)
+
+
+@nox.session(python=DEFAULT_PYTHON_VERSION)
+def core_deps_from_source(session):
+    """Run the test suite installing dependencies from source."""
     default(session, prerelease=True)
 
 
