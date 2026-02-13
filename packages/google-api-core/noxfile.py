@@ -33,7 +33,7 @@ BLACK_PATHS = ["docs", "google", "tests", "noxfile.py", "setup.py"]
 # Black and flake8 clash on the syntax for ignoring flake8's F401 in this file.
 BLACK_EXCLUDES = ["--exclude", "^/google/api_core/operations_v1/__init__.py"]
 
-PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+PYTHON_VERSIONS = ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 
 DEFAULT_PYTHON_VERSION = "3.14"
 CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
@@ -239,6 +239,11 @@ def unit(
     that major version. Only a few values are supported at any one time; the intent is to test
     deprecated but noyet abandoned versions.
     """
+    if session.python in (
+        "3.7",
+        "3.8",
+    ):
+        session.skip("Python 3.7/3.8 is no longer supported")
 
     if python_versions and session.python not in python_versions:
         session.log(f"Skipping session for Python {session.python}")
