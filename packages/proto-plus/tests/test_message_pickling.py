@@ -37,7 +37,6 @@ class Squid(proto.Message):
 
 
 def test_pickling():
-
     s = Squid(mass_kg=20)
     colors = ["RED", "BROWN", "WHITE", "BLUE"]
     s.chromatophores = [
