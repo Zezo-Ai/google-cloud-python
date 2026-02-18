@@ -107,7 +107,7 @@ html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "proto-plus-python"
+htmlhelp_basename = "proto-plus"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -133,7 +133,7 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "proto-plus-python.tex",
+        "proto-plus.tex",
         "Proto Plus for Python Documentation",
         "Luke Sneeringer",
         "manual",
@@ -148,7 +148,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "proto-plus-python",
+        "proto-plus",
         "Proto Plus for Python Documentation",
         [author],
         1,
@@ -164,10 +164,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "proto-plus-python",
+        "proto-plus",
         "Proto Plus for Python Documentation",
         author,
-        "proto-plus-python",
+        "proto-plus",
         "One line description of project.",
         "Miscellaneous",
     ),
