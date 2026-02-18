@@ -3738,3 +3738,12 @@ libraries:
       - README.rst
       - docs/summary_overview.md
     tag_format: '{id}-v{version}'
+  - id: proto-plus
+    version: 1.27.1
+    last_generated_commit: ""
+    apis: []
+    source_roots:
+      - packages/proto-plus
+    preserve_regex: []
+    remove_regex: []
+    tag_format: '{id}-v{version}'
