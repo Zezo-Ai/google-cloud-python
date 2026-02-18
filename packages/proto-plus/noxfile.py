@@ -18,9 +18,14 @@ import nox
 import pathlib
 
 
+BLACK_VERSION = "black[jupyter]==23.7.0"
+ISORT_VERSION = "isort==5.11.0"
+
+LINT_PATHS = ["docs", "proto", "tests", "noxfile.py", "setup.py"]
+
 CURRENT_DIRECTORY = pathlib.Path(__file__).parent.absolute()
 
-DEFAULT_PYTHON_VERSION="3.14"
+DEFAULT_PYTHON_VERSION = "3.14"
 
 PYTHON_VERSIONS = [
     "3.7",
@@ -41,6 +46,16 @@ nox.options.error_on_missing_interpreters = True
 @nox.parametrize("implementation", ["cpp", "upb", "python"])
 def unit(session, implementation):
     """Run the unit test suite."""
+
+    # TODO(https://github.com/googleapis/gapic-generator-python/issues/2388):
+    # Remove this check once support for Protobuf 3.x is dropped.
+    if implementation == "cpp" and session.python in (
+        "3.11",
+        "3.12",
+        "3.13",
+        "3.14",
+    ):
+        session.skip("cpp implementation is not supported in python 3.11+")
 
     constraints_path = str(
         CURRENT_DIRECTORY / "testing" / f"constraints-{session.python}.txt"
@@ -179,3 +194,20 @@ def mypy(session):
     # TODO(https://github.com/googleapis/google-cloud-python/issues/15104):
     # Enable mypy once this bug is fixed.
     session.skip("Skip mypy since this library doesn't have py.typed")
+
+
+@nox.session(python=DEFAULT_PYTHON_VERSION)
+def lint(session):
+    """Run linters.
+
+    Returns a failure if the linters find linting errors or sufficiently
+    serious code quality issues.
+    """
+    session.install("flake8", BLACK_VERSION)
+    session.run(
+        "black",
+        "--check",
+        *LINT_PATHS,
+    )
+
+    session.run("flake8", "proto", "tests")

@@ -15,8 +15,6 @@
 import itertools
 import pickle
 
-import pytest
-
 import proto
 
 
