@@ -14,7 +14,9 @@
 
 from __future__ import absolute_import
 
+import shutil
 import nox
+import os
 import pathlib
 
 
@@ -240,6 +242,53 @@ def docs(session):
         "docs/_build/doctrees",
         "docs/",
         "docs/_build/html/",
+    )
+
+
+@nox.session(python="3.10")
+def docfx(session):
+    """Build the docfx yaml files for this library."""
+
+    session.install("-e", ".")
+    session.install(
+        # We need to pin to specific versions of the `sphinxcontrib-*` packages
+        # which still support sphinx 4.x.
+        # See https://github.com/googleapis/sphinx-docfx-yaml/issues/344
+        # and https://github.com/googleapis/sphinx-docfx-yaml/issues/345.
+        "sphinxcontrib-applehelp==1.0.4",
+        "sphinxcontrib-devhelp==1.0.2",
+        "sphinxcontrib-htmlhelp==2.0.1",
+        "sphinxcontrib-qthelp==1.0.3",
+        "sphinxcontrib-serializinghtml==1.1.5",
+        "gcp-sphinx-docfx-yaml",
+        "alabaster",
+        "recommonmark",
+        "sphinx_rtd_theme",
+    )
+
+    shutil.rmtree(os.path.join("docs", "_build"), ignore_errors=True)
+    session.run(
+        "sphinx-build",
+        "-T",  # show full traceback on exception
+        "-N",  # no colors
+        "-D",
+        (
+            "extensions=sphinx.ext.autodoc,"
+            "sphinx.ext.autosummary,"
+            "docfx_yaml.extension,"
+            "sphinx.ext.intersphinx,"
+            "sphinx.ext.coverage,"
+            "sphinx.ext.napoleon,"
+            "sphinx.ext.todo,"
+            "sphinx.ext.viewcode,"
+            "recommonmark"
+        ),
+        "-b",
+        "html",
+        "-d",
+        os.path.join("docs", "_build", "doctrees", ""),
+        os.path.join("docs", ""),
+        os.path.join("docs", "_build", "html", ""),
     )
 
 
