@@ -146,6 +146,70 @@ def prerelease_deps(session, implementation):
     )
 
 
+# Only test upb and python implementation backends.
+# As of protobuf 4.x, the "ccp" implementation is not available in the PyPI package as per
+# https://github.com/protocolbuffers/protobuf/tree/main/python#implementation-backends
+@nox.session(python=PYTHON_VERSIONS[-1])
+@nox.parametrize("implementation", ["python", "upb"])
+def core_deps_from_source(session, implementation):
+    """Run all tests with core dependencies installed from source
+    rather than pulling the dependencies from PyPI.
+    """
+
+    session.env["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = implementation
+
+    # Install test environment dependencies
+    session.install("coverage", "pytest", "pytest-cov", "pytz")
+
+    # Install the package without dependencies
+    session.install("-e", ".", "--no-deps")
+
+    # TODO(https://github.com/googleapis/gapic-generator-python/issues/2357): `protobuf` should be
+    # added to the list below so that it is installed from source, rather than PyPI
+    # Note: If a dependency is added to the `core_dependencies_from_source` list,
+    # the `prerel_deps` list in the `prerelease_deps` nox session should also be updated.
+    core_dependencies_from_source = [
+        "google-api-core @ git+https://github.com/googleapis/google-cloud-python#egg=google-api-core&subdirectory=packages/google-api-core",
+        # dependency of google-api-core
+        "googleapis-common-protos @ git+https://github.com/googleapis/google-cloud-python#egg=googleapis-common-protos&subdirectory=packages/googleapis-common-protos",
+    ]
+
+    for dep in core_dependencies_from_source:
+        session.install(dep, "--no-deps", "--ignore-installed")
+        print(f"Installed {dep}")
+
+    # TODO(https://github.com/googleapis/google-cloud-python/issues/15115): Install protobuf from source at HEAD
+    session.install("--pre", "--upgrade", "protobuf")
+
+    # Print out the installed package versions
+    session.run(
+        "python", "-c", "import google.protobuf; print(google.protobuf.__version__)"
+    )
+    session.run(
+        "python", "-c", "import google.api_core; print(google.api_core.__version__)"
+    )
+
+    # TODO(https://github.com/googleapis/proto-plus-python/issues/403): re-enable `-W=error`
+    # The warnings-as-errors flag `-W=error` was removed in
+    # https://github.com/googleapis/proto-plus-python/pull/400.
+    # It should be re-added once issue
+    # https://github.com/protocolbuffers/protobuf/issues/15077 is fixed.
+    session.run(
+        "pytest",
+        "--quiet",
+        *(
+            session.posargs  # Coverage info when running individual tests is annoying.
+            or [
+                "--cov=proto",
+                "--cov-config=.coveragerc",
+                "--cov-report=term",
+                "--cov-report=html",
+                "tests",
+            ]
+        ),
+    )
+
+
 @nox.session(python="3.10")
 def docs(session):
     """Build the docs."""
