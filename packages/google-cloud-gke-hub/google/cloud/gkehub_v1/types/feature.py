@@ -242,6 +242,7 @@ class FeatureResourceState(proto.Message):
                 The Feature resource is being updated by the
                 Hub Service.
         """
+
         STATE_UNSPECIFIED = 0
         ENABLING = 1
         ACTIVE = 2
@@ -295,6 +296,7 @@ class FeatureState(proto.Message):
                 the description and any associated
                 Feature-specific details for more information.
         """
+
         CODE_UNSPECIFIED = 0
         OK = 1
         WARNING = 2
