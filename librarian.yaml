@@ -1381,7 +1381,6 @@ libraries:
       - tests/system/test_instance_group.py
       - tests/system/test_pagination.py
       - tests/system/test_smoke.py
-    skip_generate: true
     python:
       opt_args_by_api:
         google/cloud/compute/v1:
@@ -1397,7 +1396,6 @@ libraries:
     keep:
       - CHANGELOG.md
       - docs/CHANGELOG.md
-    skip_generate: true
     python:
       opt_args_by_api:
         google/cloud/compute/v1beta:
