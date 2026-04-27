@@ -24,6 +24,7 @@ from bigframes.core.compile.sqlglot import expression_compiler
 from bigframes.core.compile.sqlglot.expressions.typed_expr import TypedExpr
 
 register_nary_op = expression_compiler.expression_compiler.register_nary_op
+register_binary_op = expression_compiler.expression_compiler.register_binary_op
 register_unary_op = expression_compiler.expression_compiler.register_unary_op
 
 
@@ -83,6 +84,16 @@ def _(*exprs: TypedExpr, op: ops.AIScore) -> sge.Expression:
     args = [_construct_prompt(exprs, op.prompt_context)] + _construct_named_args(op)
 
     return sge.func("AI.SCORE", *args)
+
+
+@register_binary_op(ops.AISimilarity, pass_op=True)
+def _(content1: TypedExpr, content2: TypedExpr, op: ops.AISimilarity) -> sge.Expression:
+    args = [
+        sge.Kwarg(this="content1", expression=content1.expr),
+        sge.Kwarg(this="content2", expression=content2.expr),
+    ] + _construct_named_args(op)
+
+    return sge.func("AI.SIMILARITY", *args)
 
 
 def _construct_prompt(

@@ -69,6 +69,7 @@ from bigframes.bigquery._operations.ai import (
     generate_text,
     if_,
     score,
+    similarity,
 )
 
 __all__ = [
@@ -84,4 +85,5 @@ __all__ = [
     "generate_text",
     "if_",
     "score",
+    "similarity",
 ]
