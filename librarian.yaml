@@ -60,14 +60,12 @@ libraries:
       name_pretty_override: A unified Python API in BigQuery
       api_shortname_override: bigquery
       client_documentation_override: https://cloud.google.com/python/docs/reference/bigframes/latest
-      issue_tracker_override: https://github.com/googleapis/python-bigquery-dataframes/issues
   - name: bigquery-magics
     version: 0.14.0
     python:
       library_type: INTEGRATION
       name_pretty_override: Google BigQuery connector for Jupyter and IPython
       client_documentation_override: https://googleapis.dev/python/bigquery-magics/latest/
-      issue_tracker_override: https://github.com/googleapis/python-bigquery-magics/issues
   - name: db-dtypes
     version: 1.5.1
     description_override: Pandas extension data types for data from SQL systems such as BigQuery.
@@ -80,14 +78,12 @@ libraries:
     python:
       library_type: INTEGRATION
       name_pretty_override: Cloud Spanner Django
-      issue_tracker_override: https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open
   - name: gapic-generator
     version: 1.30.14
     python:
       library_type: CORE
       name_pretty_override: Google API Client Generator for Python
       client_documentation_override: https://gapic-generator-python.readthedocs.io/en/stable/
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       skip_readme_copy: true
   - name: gcp-sphinx-docfx-yaml
     version: 3.2.5
@@ -95,7 +91,6 @@ libraries:
       library_type: OTHER
       name_pretty_override: Sphinx DocFX YAML Generator
       client_documentation_override: https://github.com/googleapis/sphinx-docfx-yaml
-      issue_tracker_override: https://github.com/googleapis/sphinx-docfx-yaml/issues
       skip_readme_copy: true
   - name: google-ads-admanager
     version: 0.9.0
@@ -137,7 +132,6 @@ libraries:
           - python-gapic-name=marketingplatform_admin
           - warehouse-package-name=google-ads-marketingplatform-admin
       name_pretty_override: Google Marketing Platform Admin API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1alpha
   - name: google-ai-generativelanguage
     version: 0.11.0
@@ -232,7 +226,6 @@ libraries:
           - python-gapic-name=card
           - warehouse-package-name=google-apps-card
       name_pretty_override: Google Apps Card Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-apps-chat
     version: 0.8.0
@@ -246,7 +239,6 @@ libraries:
           - warehouse-package-name=google-apps-chat
           - python-gapic-name=chat
       name_pretty_override: Chat API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-apps-events-subscriptions
     version: 0.5.0
@@ -265,7 +257,6 @@ libraries:
           - python-gapic-name=events_subscriptions
           - warehouse-package-name=google-apps-events-subscriptions
       name_pretty_override: Google Workspace Events API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-apps-meet
     version: 0.4.0
@@ -340,7 +331,6 @@ libraries:
           - python-gapic-name=slides
           - warehouse-package-name=google-apps-script-type
       name_pretty_override: Google Apps Script Type Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: type
       default_version: apiVersion
   - name: google-area120-tables
@@ -362,20 +352,17 @@ libraries:
     python:
       library_type: AUTH
       name_pretty_override: Google Auth Python Library
-      issue_tracker_override: https://github.com/googleapis/google-auth-library-python/issues
       skip_readme_copy: true
   - name: google-auth-httplib2
     version: 0.3.1
     python:
       library_type: AUTH
       name_pretty_override: Google Auth httplib2
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
   - name: google-auth-oauthlib
     version: 1.3.1
     python:
       library_type: AUTH
       name_pretty_override: Google Auth OAuthlib
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       skip_readme_copy: true
   - name: google-cloud-access-approval
     version: 1.19.0
@@ -400,7 +387,6 @@ libraries:
         - google/identity/accesscontextmanager/v1
         - google/identity/accesscontextmanager/type
       client_documentation_override: https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-access-context-manager
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: accesscontextmanager
       default_version: apiVersion
   - name: google-cloud-advisorynotifications
@@ -414,7 +400,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=advisorynotifications
           - warehouse-package-name=google-cloud-advisorynotifications
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: advisorynotifications
       default_version: v1
   - name: google-cloud-alloydb
@@ -437,7 +422,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=alloydb
           - warehouse-package-name=google-cloud-alloydb
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: alloydb
       default_version: v1
   - name: google-cloud-alloydb-connectors
@@ -569,7 +553,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=appengine_logging
       name_pretty_override: App Engine Logging Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: appenginelogging
       default_version: v1
   - name: google-cloud-apphub
@@ -843,7 +826,6 @@ libraries:
           - python-gapic-name=biglake
           - warehouse-package-name=google-cloud-biglake
       name_pretty_override: BigLake API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-cloud-biglake-hive
     version: 0.1.0
@@ -871,7 +853,6 @@ libraries:
     python:
       library_type: GAPIC_COMBO
       name_pretty_override: Google Cloud BigQuery
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
       metadata_name_override: bigquery
       default_version: v2
   - name: google-cloud-bigquery-analyticshub
@@ -989,7 +970,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=bigquery_logging
       name_pretty_override: BigQuery Logging Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: bigquerylogging
       default_version: v1
   - name: google-cloud-bigquery-migration
@@ -1053,7 +1033,6 @@ libraries:
           - python-gapic-name=bigquery_storage
           - warehouse-package-name=google-cloud-bigquery-storage
       name_pretty_override: Google BigQuery Storage
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
       metadata_name_override: bigquerystorage
       default_version: v1
   - name: google-cloud-bigtable
@@ -1079,7 +1058,6 @@ libraries:
           - python-gapic-name=bigtable
           - warehouse-package-name=google-cloud-bigtable
       name_pretty_override: Google Cloud Bigtable
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559777
       metadata_name_override: bigtable
       default_version: v2
   - name: google-cloud-billing
@@ -1236,7 +1214,6 @@ libraries:
           - python-gapic-name=cloudcontrolspartner
           - warehouse-package-name=google-cloud-cloudcontrolspartner
       name_pretty_override: Cloud Controls Partner API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-cloud-cloudsecuritycompliance
     version: 0.6.0
@@ -1327,7 +1304,6 @@ libraries:
           - python-gapic-name=confidentialcomputing
           - warehouse-package-name=google-cloud-confidentialcomputing
       name_pretty_override: Confidential Computing API
-      issue_tracker_override: https://issuetracker.google.com/issues/new?component=1166820
       metadata_name_override: confidentialcomputing
       default_version: v1
   - name: google-cloud-config
@@ -1366,7 +1342,6 @@ libraries:
           - python-gapic-name=configdelivery
           - warehouse-package-name=google-cloud-configdelivery
       name_pretty_override: Config Delivery API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1alpha
   - name: google-cloud-contact-center-insights
     version: 1.26.0
@@ -1423,7 +1398,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=contentwarehouse
           - warehouse-package-name=google-cloud-contentwarehouse
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: contentwarehouse
       default_version: v1
   - name: google-cloud-core
@@ -1431,7 +1405,6 @@ libraries:
     python:
       library_type: CORE
       name_pretty_override: Google API client core library
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
   - name: google-cloud-data-fusion
     version: 1.16.0
     apis:
@@ -1508,7 +1481,6 @@ libraries:
           - python-gapic-name=datacatalog_lineage
           - warehouse-package-name=google-cloud-datacatalog-lineage
       name_pretty_override: Data Lineage API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: lineage
       default_version: v1
   - name: google-cloud-datacatalog-lineage-configmanagement
@@ -1641,7 +1613,6 @@ libraries:
           - python-gapic-name=datastore
           - warehouse-package-name=google-cloud-datastore
       name_pretty_override: Google Cloud Datastore API
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559768
       metadata_name_override: datastore
       default_version: v1
   - name: google-cloud-datastream
@@ -1719,7 +1690,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=dialogflow
           - warehouse-package-name=google-cloud-dialogflow
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/5300385
       metadata_name_override: dialogflow
       default_version: v2
   - name: google-cloud-dialogflow-cx
@@ -1761,7 +1731,6 @@ libraries:
           - python-gapic-name=discoveryengine
           - warehouse-package-name=google-cloud-discoveryengine
       name_pretty_override: Discovery Engine API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: discoveryengine
       default_version: v1beta
   - name: google-cloud-dlp
@@ -1824,7 +1793,6 @@ libraries:
     python:
       library_type: OTHER
       name_pretty_override: Document AI Toolbox
-      issue_tracker_override: https://github.com/googleapis/python-documentai-toolbox/issues
       metadata_name_override: documentai-toolbox
       default_version: v1
   - name: google-cloud-domains
@@ -1881,7 +1849,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=enterpriseknowledgegraph
           - warehouse-package-name=google-cloud-enterpriseknowledgegraph
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: enterpriseknowledgegraph
       default_version: v1
   - name: google-cloud-error-reporting
@@ -1965,7 +1932,6 @@ libraries:
           - python-gapic-name=financialservices
           - warehouse-package-name=google-cloud-financialservices
       name_pretty_override: Anti Money Laundering AI API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-cloud-firestore
     version: 2.27.0
@@ -2003,7 +1969,6 @@ libraries:
           - python-gapic-name=firestore
           - warehouse-package-name=google-cloud-firestore
       name_pretty_override: Cloud Firestore API
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/5337669
       metadata_name_override: firestore
       default_version: v1
   - name: google-cloud-functions
@@ -2053,7 +2018,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=geminidataanalytics
           - warehouse-package-name=google-cloud-geminidataanalytics
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1alpha
   - name: google-cloud-gke-backup
     version: 0.8.0
@@ -2210,7 +2174,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - warehouse-package-name=google-cloud-iam
       name_pretty_override: Cloud Identity and Access Management
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559761
       metadata_name_override: iam
       default_version: v2
   - name: google-cloud-iam-logging
@@ -2227,7 +2190,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=iam_logging
       name_pretty_override: IAM Logging Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: iamlogging
       default_version: v1
   - name: google-cloud-iamconnectorcredentials
@@ -2375,7 +2337,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - warehouse-package-name=google-cloud-logging
       name_pretty_override: Cloud Logging API
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559764
       metadata_name_override: logging
       default_version: v2
   - name: google-cloud-lustre
@@ -2494,7 +2455,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=memorystore
           - warehouse-package-name=google-cloud-memorystore
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-cloud-migrationcenter
     version: 0.4.0
@@ -2508,7 +2468,6 @@ libraries:
           - python-gapic-name=migrationcenter
           - warehouse-package-name=google-cloud-migrationcenter
       name_pretty_override: Migration Center API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: migrationcenter
       default_version: v1
   - name: google-cloud-modelarmor
@@ -2580,7 +2539,6 @@ libraries:
       library_type: GAPIC_MANUAL
       name_pretty_override: NDB Client Library for Google Cloud Datastore
       client_documentation_override: https://googleapis.dev/python/python-ndb/latest
-      issue_tracker_override: https://github.com/googleapis/python-ndb/issues
       metadata_name_override: python-ndb
       skip_readme_copy: true
   - name: google-cloud-netapp
@@ -2803,7 +2761,6 @@ libraries:
           - python-gapic-name=parallelstore
           - warehouse-package-name=google-cloud-parallelstore
       name_pretty_override: Parallelstore API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1beta
   - name: google-cloud-parametermanager
     version: 0.4.0
@@ -2817,7 +2774,6 @@ libraries:
           - python-gapic-name=parametermanager
           - warehouse-package-name=google-cloud-parametermanager
       name_pretty_override: Parameter Manager API
-      issue_tracker_override: https://issuetracker.google.com/issues/new?component=1442085&template=2002674
       default_version: v1
   - name: google-cloud-phishing-protection
     version: 1.17.0
@@ -2859,7 +2815,6 @@ libraries:
           - python-gapic-name=policysimulator
           - warehouse-package-name=google-cloud-policysimulator
       name_pretty_override: Policy Simulator API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: policysimulator
       default_version: v1
   - name: google-cloud-policytroubleshooter-iam
@@ -2920,7 +2875,6 @@ libraries:
           - python-gapic-name=privilegedaccessmanager
           - warehouse-package-name=google-cloud-privilegedaccessmanager
       name_pretty_override: Privileged Access Manager API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-cloud-pubsub
     version: 2.37.0
@@ -2935,7 +2889,6 @@ libraries:
           - python-gapic-namespace=google
           - python-gapic-name=pubsub
       name_pretty_override: Google Cloud Pub/Sub
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559741
       metadata_name_override: pubsub
       default_version: v1
   - name: google-cloud-quotas
@@ -2969,7 +2922,6 @@ libraries:
           - python-gapic-name=rapidmigrationassessment
           - warehouse-package-name=google-cloud-rapidmigrationassessment
       name_pretty_override: Rapid Migration Assessment API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: rapidmigrationassessment
       default_version: v1
   - name: google-cloud-recaptcha-enterprise
@@ -3034,7 +2986,6 @@ libraries:
           - python-gapic-name=redis
           - warehouse-package-name=google-cloud-redis
       name_pretty_override: Cloud Redis
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/5169231
       metadata_name_override: redis
       default_version: v1
   - name: google-cloud-redis-cluster
@@ -3126,7 +3077,6 @@ libraries:
           - python-gapic-name=saasplatform_saasservicemgmt
           - warehouse-package-name=google-cloud-saasplatform-saasservicemgmt
       name_pretty_override: SaaS Runtime API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1beta1
   - name: google-cloud-scheduler
     version: 2.19.0
@@ -3181,7 +3131,6 @@ libraries:
           - python-gapic-name=securesourcemanager
           - warehouse-package-name=google-cloud-securesourcemanager
       name_pretty_override: Secure Source Manager API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: securesourcemanager
       default_version: v1
   - name: google-cloud-security-publicca
@@ -3229,7 +3178,6 @@ libraries:
           - python-gapic-name=securitycenter
           - warehouse-package-name=google-cloud-securitycenter
       name_pretty_override: Google Cloud Security Command Center
-      issue_tracker_override: https://issuetracker.google.com/savedsearches/559748
       metadata_name_override: securitycenter
       default_version: v1
   - name: google-cloud-securitycentermanagement
@@ -3243,7 +3191,6 @@ libraries:
           - python-gapic-name=securitycentermanagement
           - warehouse-package-name=google-cloud-securitycentermanagement
       name_pretty_override: Security Center Management API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-cloud-service-control
     version: 1.19.0
@@ -3347,7 +3294,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=source_context
       name_pretty_override: Source Context
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: source
       default_version: v1
   - name: google-cloud-spanner
@@ -3384,7 +3330,6 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=spanner
           - warehouse-package-name=google-cloud-spanner
-      issue_tracker_override: https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open
       metadata_name_override: spanner
       default_version: v1
   - name: google-cloud-speech
@@ -3499,7 +3444,6 @@ libraries:
           - python-gapic-name=support
           - warehouse-package-name=google-cloud-support
       name_pretty_override: Google Cloud Support API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: support
       default_version: v2
   - name: google-cloud-talent
@@ -3568,7 +3512,6 @@ libraries:
       library_type: OTHER
       name_pretty_override: Python Test Utils for Google Cloud
       client_documentation_override: https://github.com/googleapis/google-cloud-python/packages/google-cloud-testutils
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: google-cloud-test-utils
   - name: google-cloud-texttospeech
     version: 2.36.0
@@ -3800,7 +3743,6 @@ libraries:
           - python-gapic-name=visionai
           - warehouse-package-name=google-cloud-visionai
       name_pretty_override: Vision AI API
-      issue_tracker_override: https://issuetracker.google.com/issues/new?component=187174&pli=1&template=1161261
       default_version: v1
   - name: google-cloud-vm-migration
     version: 1.16.0
@@ -3827,7 +3769,6 @@ libraries:
           - python-gapic-name=vmwareengine
           - warehouse-package-name=google-cloud-vmwareengine
       name_pretty_override: Google Cloud VMware Engine
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: vmwareengine
       default_version: v1
   - name: google-cloud-vpc-access
@@ -3946,16 +3887,15 @@ libraries:
           - python-gapic-namespace=google.cloud
           - python-gapic-name=workstations
           - warehouse-package-name=google-cloud-workstations
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: workstations
       default_version: v1
   - name: google-crc32c
     version: 1.8.0
+    skip_generate: true
     python:
       library_type: OTHER
       name_pretty_override: A python wrapper of the C library 'Google CRC32C'
       client_documentation_override: https://github.com/googleapis/python-crc32c
-      issue_tracker_override: https://github.com/googleapis/python-crc32c/issues
       skip_readme_copy: true
   - name: google-geo-type
     version: 0.6.0
@@ -3971,7 +3911,6 @@ libraries:
           - python-gapic-name=type
           - warehouse-package-name=google-geo-type
       name_pretty_override: Geo Type Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: geotype
       default_version: apiVersion
   - name: google-maps-addressvalidation
@@ -3987,7 +3926,6 @@ libraries:
           - python-gapic-name=addressvalidation
           - warehouse-package-name=google-maps-addressvalidation
       name_pretty_override: Address Validation API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: addressvalidation
       default_version: v1
   - name: google-maps-areainsights
@@ -4016,7 +3954,6 @@ libraries:
           - python-gapic-name=fleetengine
           - warehouse-package-name=google-maps-fleetengine
       name_pretty_override: Local Rides and Deliveries API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: fleetengine
       default_version: v1
   - name: google-maps-fleetengine-delivery
@@ -4032,7 +3969,6 @@ libraries:
           - proto-plus-deps=google.geo.type
           - warehouse-package-name=google-maps-fleetengine-delivery
       name_pretty_override: Last Mile Fleet Solution Delivery API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: fleetengine-delivery
       default_version: v1
   - name: google-maps-geocode
@@ -4065,7 +4001,6 @@ libraries:
           - python-gapic-name=mapsplatformdatasets
           - warehouse-package-name=google-maps-mapsplatformdatasets
       name_pretty_override: Maps Platform Datasets API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: mapsplatformdatasets
       default_version: v1
   - name: google-maps-navconnect
@@ -4096,7 +4031,6 @@ libraries:
           - python-gapic-name=places
           - warehouse-package-name=google-maps-places
       name_pretty_override: Places API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: places
       default_version: v1
   - name: google-maps-routeoptimization
@@ -4125,7 +4059,6 @@ libraries:
           - python-gapic-name=routing
           - warehouse-package-name=google-maps-routing
       name_pretty_override: Google Maps Routing
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       metadata_name_override: routing
       default_version: v2
   - name: google-maps-solar
@@ -4180,7 +4113,6 @@ libraries:
           - python-gapic-namespace=google.shopping
           - warehouse-package-name=google-shopping-merchant-accounts
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-conversions
     version: 1.3.0
@@ -4199,7 +4131,6 @@ libraries:
           - python-gapic-namespace=google.shopping
           - warehouse-package-name=google-shopping-merchant-conversions
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-datasources
     version: 1.4.0
@@ -4220,7 +4151,6 @@ libraries:
           - python-gapic-namespace=google.shopping
           - warehouse-package-name=google-shopping-merchant-datasources
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-inventories
     version: 1.3.0
@@ -4281,7 +4211,6 @@ libraries:
           - python-gapic-namespace=google.shopping
           - warehouse-package-name=google-shopping-merchant-lfp
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-notifications
     version: 1.3.0
@@ -4301,7 +4230,6 @@ libraries:
           - python-gapic-name=merchant_notifications
           - warehouse-package-name=google-shopping-merchant-notifications
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-ordertracking
     version: 1.3.0
@@ -4342,7 +4270,6 @@ libraries:
           - python-gapic-name=merchant_products
           - warehouse-package-name=google-shopping-merchant-products
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-productstudio
     version: 0.4.0
@@ -4356,7 +4283,6 @@ libraries:
           - python-gapic-namespace=google.shopping
           - warehouse-package-name=google-shopping-merchant-productstudio
       name_pretty_override: Merchant ProductStudio API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1alpha
   - name: google-shopping-merchant-promotions
     version: 1.3.0
@@ -4377,7 +4303,6 @@ libraries:
           - python-gapic-name=merchant_promotions
           - warehouse-package-name=google-shopping-merchant-promotions
       name_pretty_override: Merchant API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1
   - name: google-shopping-merchant-quota
     version: 1.4.0
@@ -4436,7 +4361,6 @@ libraries:
           - python-gapic-namespace=google.shopping
           - warehouse-package-name=google-shopping-merchant-reviews
       name_pretty_override: Merchant Reviews API
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: v1beta
   - name: google-shopping-type
     version: 1.4.0
@@ -4451,7 +4375,6 @@ libraries:
           - python-gapic-name=type
           - warehouse-package-name=google-shopping-type
       name_pretty_override: Shopping Type Protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       default_version: apiVersion
   - name: googleapis-common-protos
     version: 1.74.0
@@ -4475,7 +4398,6 @@ libraries:
         - google/rpc/context
       name_pretty_override: Google APIs Common Protos
       client_documentation_override: https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       product_documentation_override: https://github.com/googleapis/googleapis/tree/master/google
       default_version: apiVersion
   - name: grafeas
@@ -4509,14 +4431,12 @@ libraries:
       library_type: INTEGRATION
       name_pretty_override: Google BigQuery connector for pandas
       client_documentation_override: https://googleapis.dev/python/pandas-gbq/latest/
-      issue_tracker_override: https://github.com/googleapis/python-bigquery-pandas/issues
       skip_readme_copy: true
   - name: proto-plus
     version: 1.27.2
     python:
       library_type: CORE
       name_pretty_override: Proto Plus
-      issue_tracker_override: https://github.com/googleapis/google-cloud-python/issues
       skip_readme_copy: true
   - name: sqlalchemy-bigquery
     version: 1.16.0
@@ -4530,5 +4450,4 @@ libraries:
       library_type: INTEGRATION
       name_pretty_override: Spanner dialect for SQLAlchemy
       client_documentation_override: https://github.com/googleapis/python-spanner-sqlalchemy
-      issue_tracker_override: https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open
       skip_readme_copy: true
