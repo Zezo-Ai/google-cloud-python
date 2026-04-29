@@ -68,7 +68,6 @@ libraries:
       library_type: INTEGRATION
   - name: django-google-spanner
     version: 4.0.3
-    skip_generate: true
     python:
       library_type: INTEGRATION
   - name: gapic-generator
